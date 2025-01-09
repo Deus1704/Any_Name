@@ -13,7 +13,7 @@ def bin_search(arr,target):
         mid = (left + right) // 2
         if arr[mid] == target:
             return mid
-        elif arr[mid] < target:
+        if arr[mid] < target:
             left = mid + 1
         else:
             right = mid - 1
@@ -42,7 +42,7 @@ def main():
     Basic comparison between linear and binary search
     """
     print("Comparing two search approaches. Binary and Linear")
-    print("The array to search is generated with 1e6 elements") 
+    print("The array to search is generated with 1e6 elements")
     print("The target is 12345")
     print("First approach: Linear Search")
     arr = generate_list()
