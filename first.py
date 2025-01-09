@@ -1,9 +1,11 @@
 import time
 
 def bin_search(arr,target):
+    """
+    Binary search algorithm
+    """
     left = 0
     right = len(arr) - 1
-    
     while left <= right:
         mid = (left + right) // 2
         if arr[mid] == target:
@@ -15,14 +17,20 @@ def bin_search(arr,target):
     return -1
 
 def linear_search(arr,target):
+    """
+    Linear search algorithm
+    """
     for i in range(len(arr)):
         if arr[i] == target:
             return i
     return -1
 
-def generate_list(arr):
-    for i in range(1,1000000):
-        arr.append(i)
+def generate_list():
+    """
+    Generate a list of 1e6 elements
+    """
+    arr = [0]*1000000
+    for i,_ in enumerate(arr): arr[i] = i
     return arr
 
 def main():
@@ -30,7 +38,7 @@ def main():
     print("The array to search is generated with 1e6 elements") 
     print("The target is 12345")
     print("First approach: Linear Search")
-    arr = generate_list([])
+    arr = generate_list()
     t1= time.time()
     if (linear_search(arr,12345)) == -1:
         print("Element not found")
