@@ -1,3 +1,6 @@
+"""
+Simple comparison between linear and binary search
+"""
 import time
 
 def bin_search(arr,target):
@@ -20,8 +23,8 @@ def linear_search(arr,target):
     """
     Linear search algorithm
     """
-    for i in range(len(arr)):
-        if arr[i] == target:
+    for i,val in enumerate(arr):
+        if val == target:
             return i
     return -1
 
@@ -30,10 +33,14 @@ def generate_list():
     Generate a list of 1e6 elements
     """
     arr = [0]*1000000
-    for i,_ in enumerate(arr): arr[i] = i
+    for i,_ in enumerate(arr):
+        arr[i] = i
     return arr
 
 def main():
+    """
+    Basic comparison between linear and binary search
+    """
     print("Comparing two search approaches. Binary and Linear")
     print("The array to search is generated with 1e6 elements") 
     print("The target is 12345")
